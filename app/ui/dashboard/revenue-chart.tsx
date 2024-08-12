@@ -14,7 +14,7 @@ export default async function RevenueChart({
                                            } : {
     revenue: Revenue[];
 }) {
-    const charHeight = 350;
+    const chartHeight = 350;
 
     const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
@@ -32,7 +32,7 @@ export default async function RevenueChart({
                 <div className={"sm:grid-cols-13 mt-0 grid grid-cols-12 items-end gap-2 rounded-md bg-white p-4 md:gap-4"}>
                     <div
                         className={"mb-6 hidden flex-col justify-between text-sm text-gray-400 sm:flex"}
-                        style={{ height: `${charHeight}px`}}
+                        style={{ height: `${chartHeight}px`}}
                     >
                         {yAxisLabels.map((label) => (
                             <p key={label}>{label}</p>
@@ -44,7 +44,7 @@ export default async function RevenueChart({
                             <div
                                 className={"w-full rounded-md bg-blue-300"}
                                 style={{
-                                    height: `${(charHeight / topLabel) * month.revenue}px`,
+                                    height: `${(chartHeight / topLabel) * month.revenue}px`,
                                 }}
                             ></div>
                             <p className={"-rotate-90 text-sm text-gray-400 sm:rotate-0"}>
